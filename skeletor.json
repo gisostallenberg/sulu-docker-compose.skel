@@ -37,9 +37,9 @@
         "docker-compose up -d",
         "docker-compose exec -T app composer create-project sulu/sulu-minimal tmp -n",
         "rsync -avzu tmp/. ./",
-        "rm -r tmp/",
         "git init",
         "git add .",
+        "git reset tmp/",
         "git commit -m \"Base Sulu setup\""
     ]
 }
