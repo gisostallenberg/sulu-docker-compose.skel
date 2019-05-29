@@ -4,11 +4,7 @@
     "params": {
         "project.name": "My project name",
         "project.tag": "project-name",
-        "project.namespace": "ConnectHolland\\\\MyProject\\\\App\\\\",
         "project.description": "Description about my project",
-        "author.name": "My Name",
-        "author.email": "anonymous@example.com",
-        "package.name": "connectholland/my-project"
     },
     "basedir": "skeletor",
     "files": {
@@ -38,6 +34,7 @@
         }
     },
     "post_install": [
+        "docker-compose up -d",
         "docker-compose exec app composer create-project sulu/sulu-minimal tmp -n",
         "rsync -avzu tmp/. ./",
         "rm -r tmp/",
