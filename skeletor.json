@@ -36,6 +36,8 @@
     "post_install": [
         "docker-compose up -d",
         "docker-compose exec -T app composer create-project sulu/sulu-minimal tmp -n",
+        "rsync -avzu tmp/. ./",
+        "rm -r tmp/",
         "git init",
         "git add .",
         "git commit -m \"Base Sulu setup\""
