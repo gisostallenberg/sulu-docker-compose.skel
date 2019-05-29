@@ -4,7 +4,7 @@
     "params": {
         "project.name": "My project name",
         "project.tag": "project-name",
-        "project.description": "Description about my project",
+        "project.description": "Description about my project"
     },
     "basedir": "skeletor",
     "files": {
