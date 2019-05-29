@@ -35,7 +35,7 @@
     },
     "post_install": [
         "docker-compose up -d",
-        "docker-compose exec -T app composer create-project sulu/sulu-minimal tmp -n",
+        "docker-compose exec -T --env COMPOSER_MEMORY_LIMIT=14G app composer create-project sulu/sulu-minimal tmp -n",
         "rsync -avzu tmp/. ./",
         "git init",
         "git add .",
