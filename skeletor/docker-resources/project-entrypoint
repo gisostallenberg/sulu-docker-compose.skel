@@ -1,0 +1,11 @@
+#!/bin/bash
+
+wait-for-it --host=${REDIS_HOST} --port=${REDIS_PORT} --timeout=5
+
+if [ -z ${@+x} ]; then
+  echo "entrypoint called without arguments; executing base"
+  exec base-entrypoint
+else
+  echo "entrypoint arguments are set to ['$@']; executing..."
+  exec base-entrypoint $@
+fi

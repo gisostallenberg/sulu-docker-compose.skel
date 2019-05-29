@@ -1,0 +1,48 @@
+{
+    "title": "Website using Sulu CMS",
+    "description": "Skeleton for the docker-compose setup of a Sulu website",
+    "params": {
+        "project.name": "My project name",
+        "project.tag": "project-name",
+        "project.namespace": "ConnectHolland\\\\MyProject\\\\App\\\\",
+        "project.description": "Description about my project",
+        "author.name": "My Name",
+        "author.email": "anonymous@example.com",
+        "package.name": "connectholland/my-project"
+    },
+    "basedir": "skeletor",
+    "files": {
+        "README.md": {
+        },
+        ".gitignore": {
+            "type": "file"
+        },
+        ".env": {
+        },
+        "docker-compose.yml": {
+            "type": "file"
+        },
+        "docker-resources/apache.conf": {
+        },
+        "docker-resources/application.tgz": {
+            "type": "file"
+        },
+        "docker-resources/composer-auth.json": {
+            "type": "file"
+        },
+        "docker-resources/Dockerfile": {
+            "type": "file"
+        },
+        "docker-resources/project-entrypoint": {
+            "type": "file"
+        }
+    },
+    "post_install": [
+        "docker-compose exec app composer create-project sulu/sulu-minimal tmp -n",
+        "rsync -avzu tmp/. ./",
+        "rm -r tmp/",
+        "git init",
+        "git add .",
+        "git commit -m \"Base Sulu setup\""
+    ]
+}
