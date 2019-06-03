@@ -46,7 +46,7 @@ services:
             - MYSQL_DATABASE=${DATABASE_NAME}
             - MYSQL_PASSWORD=${DATABASE_PASSWORD}
             - MYSQL_USER=${DATABASE_USER}
-            - MYSQL_ROOT_PASSWORD=ftMBClx4WEH2s
+            - MYSQL_ROOT_PASSWORD=password
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:4.8
