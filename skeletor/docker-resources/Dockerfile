@@ -19,8 +19,6 @@ RUN if [ -f composer.json ]; then \
 
 COPY docker-resources/apache.conf /etc/apache2/sites-enabled/000-default.conf
 
-ENV WRITEABLE_WEB_DIRECTORIES "var/logs:var/cache:var/indexes:var/uploads"
-
 COPY docker-resources/project-entrypoint /usr/local/bin/project-entrypoint
 
 ENTRYPOINT ["project-entrypoint"]
